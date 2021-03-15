@@ -27,4 +27,4 @@ Pythonファイル「moguratataki.py」の5行目のパスをフルパスで入�
 $python3 moguratataki.py
 ```
 
-5. もぐらたたきの「ゲームを開始」を押す
+5. もぐらたたきの「ゲーム開始」を押す
