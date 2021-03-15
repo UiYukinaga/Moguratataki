@@ -1,15 +1,17 @@
+# moguratataki v2
+
+import os
 import pyautogui as pg
 import time
-
-# 使用しているPCの環境に合わせて"img"ディレクトリのフルパスに書き換えてください。
-# 最後に"/"を忘れずに！
-img_dir = "***/img/"
 
 def moguratataki():
     hit_count = 0
     start_time = time.time()
     
-    field_img = img_dir + "field.png"
+    cur_dir = os.getcwd()
+    print(cur_dir)
+
+    field_img = os.getcwd() + "/img/field.png"
     
     # Search to Center position of Battle field.
     try:
@@ -32,8 +34,8 @@ def moguratataki():
         print("ERROR: The center coordinates are out of alignment.")
         print("Please, Calibrate offsets.")
     
-    # キャリブレーション完了後下のreturnをコメントアウトすること！
-    return 0
+    # キャリブレーション時は下のreturnをコメントアウト解除すること！
+#    return 0
 
     print("スタンバイOK!「ゲーム開始」をクリックしてね！")
 
@@ -47,10 +49,10 @@ def moguratataki():
               [center_x - 150, center_y + 150],
               [center_x - 0, center_y + 150],
               [center_x + 150, center_y + 150]]
-    
 
     while True:
-        for i in range(9):
+    
+        for i in range(9):            
             x, y = points[i]
             x = x + offset_x
             y = y + offset_y
@@ -69,7 +71,7 @@ def moguratataki():
         d_t = cur_time - start_time
         if d_t > 65:
             break
-        
+
 
     
 # Is the cursor on the target?
